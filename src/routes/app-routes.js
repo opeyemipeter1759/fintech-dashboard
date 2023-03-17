@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DashboardRoute } from './route';
-import Sidebar from '../components/sidebar/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 export default function AppRoutes() {
   return (
     <Router>
-      <Sidebar />
+          <Sidebar />
+          <main className='content'>
       <Routes>
         {DashboardRoute.map((DashboardRoute, index) => {
           return (
@@ -18,6 +19,8 @@ export default function AppRoutes() {
           );
         })}
       </Routes>
+          </main>
+          
     </Router>
   );
 }

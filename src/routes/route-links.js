@@ -7,4 +7,4 @@ export const RouteLinks = {
     analytics: "/analytics",
     getHelp: "/help",
     settings:"/settings"
-}
+}   

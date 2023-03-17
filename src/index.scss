@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,600;1,700&display=swap');
+@import "./assets/styles/base.scss";
+
+// pages
+@import"./assets/styles/components/_header";
 
 html,
 body,
@@ -8,9 +12,12 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
-  color: black;
+  overflow: hidden;
 }
 
+.content{
+    margin: 0 25px;
+}
 .app {
   display: flex;
   position: relative;

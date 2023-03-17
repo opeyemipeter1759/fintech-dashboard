@@ -11,7 +11,7 @@ import MapsUgcIcon from '@mui/icons-material/MapsUgc';
 import SettingsIcon from '@mui/icons-material/Settings';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { RouteLinks } from '../../routes/route-links';
+import { RouteLinks } from '../routes/route-links';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
