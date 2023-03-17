@@ -1,23 +1,12 @@
-import { ColorModeContext, useMode } from './theme';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import AppRoutes from './routes/app-routes'
 
-function App()
-{
-  const [theme, colorMode] = useMode();
-    
-    return (
-        <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-        <CssBaseline />
-                            
-           <div className="app">
-   <h1>hello</h1>
-    </div> 
-      </ThemeProvider>
+function App() {
 
-    </ColorModeContext.Provider>
-      
-    
+  return (
+        <div className='app'>
+             {/* <Sidebar/> */}
+             <AppRoutes/>
+        </div>
   );
 }
 
