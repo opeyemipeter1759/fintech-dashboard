@@ -1,0 +1,22 @@
+.main{
+    display: flex;
+    gap:32px ;
+    .first{
+        flex: 25%;
+        .card{
+            background-color: red;
+        }
+    }
+    .second{
+        flex: 75%;
+        .second-top{
+            display: flex;
+            .chart{
+                flex: 50%;
+            }
+            .contact{
+                flex: 50%;
+            }
+        }
+    }
+}
