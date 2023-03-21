@@ -3,8 +3,37 @@
     gap:32px ;
     .first{
         flex: 25%;
-        .card{
-            background-color: red;
+        .card {
+            padding: 10px;
+            //background-image: url(../../images/cardbg.jpg);
+            // height: 109px;
+             min-width: 205.48px;
+            // background-repeat: no-repeat;
+            background-color: #0177FB;
+            border-radius: 10px;
+            p{
+                font-size: 13.1625px;
+                line-height: 15px;
+                font-weight: 600;
+                color: #FFFFFF;
+            }
+            .card-inner-detail{
+                margin-top: 36px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &-icon{
+                    height: 100%;
+                }
+            }
+        }
+        .money{
+            margin-top: 24px;
+            .select-card{
+                background: #FFFFFF;
+                    box-shadow: 0px 10.9688px 21.9375px rgba(122, 122, 122, 0.2);
+                    border-radius: 10.2375px;
+            }
         }
     }
     .second{
