@@ -115,5 +115,28 @@
                 flex: 50%;
             }
         }
+        .recent-transaction{
+            &-heading{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .pending{
+                color: #FFAA90;
+                background-color: #FFF1ED;
+                border-radius: 5px;
+                padding: 5px 8px;
+                width: 57px;
+                text-align: center;
+            }
+            .success{
+                color: #61BB84;
+                background-color: #EBFFF3;
+                border-radius: 5px;
+                padding: 5px 8px;
+                width: 57px;
+                text-align: center;
+            }
+        }
     }
 }
