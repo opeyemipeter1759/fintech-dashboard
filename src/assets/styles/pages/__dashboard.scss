@@ -1,6 +1,7 @@
 .main{
     display: flex;
     gap:32px ;
+    margin-top: 30px;
     .first{
         flex: 25%;
         .card {
@@ -29,12 +30,79 @@
         }
         .money{
             margin-top: 24px;
+            .money-heading{
+                font-size: 16.0875px;
+                line-height: 19px;
+                color: #141736;
+            }
             .select-card{
                 background: #FFFFFF;
                     box-shadow: 0px 10.9688px 21.9375px rgba(122, 122, 122, 0.2);
                     border-radius: 10.2375px;
+                    margin-bottom: 20px;
+            }
+            .enter-amount{
+                background: #FFFFFF;
+                box-shadow: 0px 10.9688px 21.9375px rgba(118, 118, 118, 0.2);
+                border-radius: 10.2375px;
+            }
+            .btn{
+                background: #0177FB;
+                border-radius: 16.0875px;
+                padding: 14px 16.9px;
+                margin-top: 21px;
+                color: #FFFFFF;
+                text-align: center;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .profile-icon {
+                background: #DFF3FE;
+                color: #0177FB;
+                border-radius: 50%;
+                height: 15px;
+                 width: 15px;
+                 display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            .profile-details {
+                margin-top: 17px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .profile-name {
+                display: flex;
+                gap: 10px;
+                align-items: center;
             }
         }
+        .transfer{
+            margin-top: 40px;
+            background: #FFFFFF;
+            border: 0.566969px solid #E8E8E8;
+            border-radius: 10.2375px;
+            padding: 12px;
+        }
+        
+    .transfer-details-icons {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        text-align: center;
+        p {
+            font-size: 9.50625px;
+            color: #798BA3;
+        }
+        .transfer-icons {
+            border: 0.73125px solid #F2F2F2;
+            padding: 12px;
+            border-radius: 7px;
+            width: 40px;
+            margin-top: 16px;
+        }
+    }
     }
     .second{
         flex: 75%;

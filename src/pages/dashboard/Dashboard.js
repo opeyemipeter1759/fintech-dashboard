@@ -1,12 +1,21 @@
-import React from 'react';
+import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Header from '../../components/Header';
-
+import AddIcon from '@mui/icons-material/Add';
+import Box from '@mui/material/Box';
+import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import IconButton from '@mui/material/IconButton';
+import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
+import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
+import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
 const Dashboard = () => {
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = useState('');
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -34,7 +43,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className='money'>
-            <p>Send Money</p>
+            <p className='money-heading'>Send Money</p>
             <div className='select-card'>
               <FormControl
                 sx={{
@@ -54,6 +63,14 @@ const Dashboard = () => {
                   sx={{
                     boxShadow: 'none',
                     '.MuiOutlinedInput-notchedOutline': { border: 0 },
+                    '&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline':
+                      {
+                        border: 0,
+                      },
+                    '&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+                      {
+                        border: 0,
+                      },
                   }}
                   value={age}
                   onChange={handleChange}
@@ -68,12 +85,154 @@ const Dashboard = () => {
                   <MenuItem value={30}>Thirty</MenuItem> */}
                 </Select>
               </FormControl>
-                      </div>
-                      <div className="enter-amount">
-                      $<TextField id="standard-basic" label="Standard" variant="standard" />
-                      </div> 
+            </div>
+            <div className='enter-amount'>
+              <Box>
+                <div
+                  style={{ display: 'flex', gap: '10px', alignItems: 'center' }}
+                >
+                  <img src='/images/astrid.jpg' alt='Master Card' />
+                  <p className='amount-label'>Enter the amount</p>
+                </div>
+                <Box
+                  component='form'
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                  }}
+                  noValidate
+                  autoComplete='off'
+                >
+                  <TextField
+                    id='standard-basic'
+                    sx={{
+                      '& fieldset': { border: 'none' },
+                    }}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position='start'>
+                          <AttachMoneyOutlinedIcon />
+                        </InputAdornment>
+                      ),
+                    }}
+                    style={{
+                      m: 1,
+                      width: '25ch',
+                      borderColor: 'none!important',
+                    }}
+                  />
+                  <img src='/images/country.jpg' alt='Master Card' />
+                </Box>
+              </Box>
+            </div>
+            <Box className='profile-details'>
+              <Box className='profile-name'>
+                <img src='/images/astrid.jpg' alt='Master Card' />
+                <p>Astrid Hayes</p>
+              </Box>
+              <div className='profile-icon'>
+                <AddIcon sx={{ fontSize: 'small' }} />
+              </div>
+            </Box>
+            <div className='btn'>Send Money</div>
           </div>
-          <div className='transfer'>transfer</div>
+          <div className='transfer'>
+            <p className='transfer-heading'> Quick Transfer</p>
+            <div className=''>
+              <FormControl
+                sx={{
+                  m: 1,
+                  minWidth: 120,
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <div>
+                  <img src='/images/debit-card.png' alt='' />
+                  <span>Debit</span>
+                </div>
+                <Select
+                  sx={{
+                    boxShadow: 'none',
+                    '.MuiOutlinedInput-notchedOutline': { border: 0 },
+                    '&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline':
+                      {
+                        border: 0,
+                      },
+                    '&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+                      {
+                        border: 0,
+                      },
+                  }}
+                  value={age}
+                  onChange={handleChange}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Without label' }}
+                >
+                  <MenuItem value=''>
+                    <em>$10.860</em>
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className='enter-amount'>
+              <FormControl fullWidth sx={{ m: 1 }} variant='filled'>
+                <InputLabel htmlFor='outlined-adornment-password'>
+                  Enter amount
+                </InputLabel>
+                <OutlinedInput
+                  id='outlined-adornment-password'
+                  type='text'
+                  startAdornment={
+                    <InputAdornment position='start'>$</InputAdornment>
+                  }
+                  endAdornment={
+                    <InputAdornment position='end'>
+                      <IconButton
+                        aria-label='toggle password visibility'
+                        edge='end'
+                      >
+                        <img src='/images/country.jpg' alt='Master Card' />
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+            </div>
+            <div className='transfer-details-icons'>
+              <div>
+                <IosShareOutlinedIcon
+                  className='transfer-icons'
+                  sx={{ color: '#A789FF' }}
+                />
+                <p>send</p>
+              </div>
+              <div>
+                <IosShareOutlinedIcon
+                  className='transfer-icons'
+                  sx={{ color: '#83DEA4' }}
+                />
+                <p>Receive</p>
+              </div>
+              <div>
+                <ReceiptOutlinedIcon
+                  className='transfer-icons'
+                  sx={{ color: '#FCE37E' }}
+                />
+                <p>Invoicing</p>
+              </div>
+              <div>
+                <DashboardCustomizeOutlinedIcon
+                  className='transfer-icons'
+                  sx={{ color: '#436CFB' }}
+                />
+                <p>More</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className='second'>
           <div className='second-top'>
