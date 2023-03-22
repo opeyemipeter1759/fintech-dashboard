@@ -11,13 +11,17 @@ import {
   InputLabel,
   OutlinedInput,
 } from '@mui/material';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import EditIcon from '@mui/icons-material/Edit';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
 import Header from '../../components/Header';
 import AddIcon from '@mui/icons-material/Add';
 import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
 import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
 import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
-import { recentTranscationObj } from './recent-transaction-data';
+import { recentTranscationObj, statisticsObj } from './recent-transaction-data';
 
 const TransactionItem = ({ icon, title, date, cardNumber, amount, status }) => {
   return (
@@ -46,18 +50,17 @@ const TransactionItem = ({ icon, title, date, cardNumber, amount, status }) => {
   );
 };
 
-const StatItem = ( { icon, rating, title } ) =>
-{
-    return (
-        <div className='stats'>
-            <img src={icon} alt={title}/>
-            <div>
-                <h2>{rating}</h2>
-                <p>{title}</p>
-            </div>
-        </div>
-    )
-}
+const StatItem = ({ icon, rating, title }) => {
+  return (
+    <div className='stat-item'>
+      <img src={icon} alt={title} />
+      <div>
+        <h2>{rating}</h2>
+        <p>{title}</p>
+      </div>
+    </div>
+  );
+};
 
 const Dashboard = () => {
   const [age, setAge] = useState('');
@@ -282,7 +285,90 @@ const Dashboard = () => {
         <div className='second'>
           <div className='second-top'>
             <div className='chart'>money flow</div>
-            <div className='contact'>recent contact</div>
+            <div className='contact'>
+              <div className='recent-contact-section'>
+                <div>
+                  <p>Recent Contacts</p>
+                </div>
+                <div className='recent-contact-icon'>
+                  <EditIcon sx={{ color: '#C1C1C1' }} />
+                  <SearchOutlinedIcon sx={{ color: '#0177FB' }} />
+                </div>
+              </div>
+              <p className='recipient-text'>18 recipients</p>
+                          <div  className='image-stack'
+                          >
+                <img
+                  src='/images/image1.jpg'
+                  alt='contact-images'
+                  className='contact-image'
+                />
+                <img
+                  src='/images/image2.jpg'
+                  alt='contact-images'
+                  className='contact-image'
+                />
+                <img
+                  src='/images/image3.jpg'
+                  alt='contact-images'
+                  className='contact-image'
+                />
+                <img
+                  src='/images/image4.jpg'
+                  alt='contact-images'
+                  className='contact-image'
+                />
+                <img
+                  src='/images/image5.jpg'
+                  alt='contact-images'
+                  className='contact-image'
+                />
+                <ArrowForwardIosIcon
+                  sx={{ fontSize: 'medium' }}
+                  className='recent-contact-forward'
+                />
+              </div>
+              <div className='recent-contact-group'>
+                <p sx={{ color: '#CCCCCC' }}>
+                  Group <span style={{ color: '#7D8DA6' }}>Party</span>{' '}
+                </p>
+                <div className='recent-image'>
+                  <div class='group-image'>
+                    <div>
+                      <img src='/images/image1.jpg' alt='Master Card' />
+                      <img src='/images/image1.jpg' alt='Master Card' />
+                      <img src='/images/image1.jpg' alt='Master Card' />
+                    </div>
+                    <div className='recent-contact-number'>
+                      <p>+ 5</p>
+                    </div>
+                  </div>
+                  <div></div>
+                  <div>
+                    <MarkChatUnreadIcon sx={{ color: '#C1C1C1' }} />
+                  </div>
+                </div>
+                <div className='recent-image'>
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: '40px',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <img src='/images/image.jpg' alt='Master Card' />
+                    <div>
+                      <p className='recent-contact-name'>Dakota Milk</p>
+                      <p className='recent-contact-amount'>$ 420.00</p>
+                    </div>
+                  </div>
+                  <ArrowForwardIosIcon
+                    sx={{ fontSize: 'medium' }}
+                    className='recent-contact-forward'
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div className='recent-transaction'>
             <div className='recent-transaction-heading'>
@@ -303,7 +389,23 @@ const Dashboard = () => {
               );
             })}
           </div>
-          <div className='stat'>statistics</div>
+                  <Box boxShadow="0px 14.625px 80.4375px -21.9375px rgba(43, 37, 37, 0.12);" borderRadius=" 10.2375px">
+                      <div className="stat-wrapper">
+            <h2>Statistics</h2>
+            <div className='stat'>
+              {statisticsObj.map((item, i) => {
+                return (
+                  <StatItem
+                    key={i}
+                    icon={item.icon}
+                    rating={item.rating}
+                    title={item.title}
+                  />
+                );
+              })}
+            </div>
+                </div>
+          </Box>
         </div>
       </div>
     </div>

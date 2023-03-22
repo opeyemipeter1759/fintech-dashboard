@@ -29,22 +29,22 @@ export const recentTranscationObj =
 
 export const statisticsObj = [
     {
-        icon: "",
+        icon: "/images/customer-stat.png",
         rating: "220k",
         title:"customers"
     },
     {
-        icon: "",
+        icon: "/images/remitance-stat.png",
         rating: "220k",
         title:"Remittance"
     },
     {
-        icon: "",
+        icon: "/images/donation-stat.png",
         rating: "220k",
         title:"Donation"
     },
     {
-        icon: "",
+        icon: "/images/watchtime-stat.png",
         rating: "220k",
         title:"watchtime"
         },
